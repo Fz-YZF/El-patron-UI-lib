@@ -9,7 +9,7 @@ local CoreGuiService = game:GetService("CoreGui")
 local ContentService = game:GetService("ContentProvider")
 
 local Themes = {
-	Light = {
+	Patron = {
 		MainFrame = Color3.fromRGB(56, 56, 56),
 		Minimise = Color3.fromRGB(219, 210, 202),
 		MinimiseAccent = Color3.fromRGB(219, 210, 202),
