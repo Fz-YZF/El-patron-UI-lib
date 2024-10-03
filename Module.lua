@@ -168,6 +168,38 @@ local Themes = {
 		ColorPickerAccent = Color3.fromRGB(219, 68, 103),
 		TextField = Color3.fromRGB(175,175,175),
 		TextFieldAccent = Color3.fromRGB(255,255,255),
+	},
+	ElPatron = {
+		MainFrame = Color3.fromRGB(0, 0, 0),
+		Minimise = Color3.fromRGB(219, 210, 202),
+		MinimiseAccent = Color3.fromRGB(219, 210, 202),
+		Maximise = Color3.fromRGB(189, 183, 177),
+		MaximiseAccent = Color3.fromRGB(189, 183, 177),
+		NavBar = Color3.fromRGB(0, 138, 16),
+		NavBarAccent = Color3.fromRGB(255,255,255),
+		NavBarInvert = Color3.fromRGB(30,30,30),
+		TitleBar = Color3.fromRGB(219, 68, 103),
+		TitleBarAccent = Color3.fromRGB(255,255,255),
+		Overlay = Color3.fromRGB(219, 68, 103),
+		Banner = Color3.fromRGB(255,255,255),
+		BannerAccent = Color3.fromRGB(219, 68, 103),
+		Content = Color3.fromRGB(219, 68, 103),
+		Button = Color3.fromRGB(219, 68, 103),
+		ButtonAccent = Color3.fromRGB(255,255,255),
+		ChipSet = Color3.fromRGB(219, 68, 103),
+		ChipSetAccent = Color3.fromRGB(255,255,255),
+		DataTable = Color3.fromRGB(219, 68, 103),
+		DataTableAccent = Color3.fromRGB(255,255,255),
+		Slider = Color3.fromRGB(255,255,255),
+		SliderAccent = Color3.fromRGB(219, 68, 103),
+		Toggle = Color3.fromRGB(219, 68, 103),
+		ToggleAccent = Color3.fromRGB(255,255,255),
+		Dropdown = Color3.fromRGB(255,255,255),
+		DropdownAccent = Color3.fromRGB(219, 68, 103),
+		ColorPicker = Color3.fromRGB(255,255,255),
+		ColorPickerAccent = Color3.fromRGB(219, 68, 103),
+		TextField = Color3.fromRGB(175,175,175),
+		TextFieldAccent = Color3.fromRGB(255,255,255),
 	}
 }
 
@@ -719,34 +751,34 @@ function Material.Load(Config)
 
 	pcall(function() OldInstance:Destroy() end);
 
-    local function GetExploit()
-        local Table = {};
-        Table.Synapse = syn;
-        Table.ProtoSmasher = pebc_create;
-        Table.Sentinel = issentinelclosure;
-        Table.ScriptWare = getexecutorname;
+	local function GetExploit()
+		local Table = {};
+		Table.Synapse = syn;
+		Table.ProtoSmasher = pebc_create;
+		Table.Sentinel = issentinelclosure;
+		Table.ScriptWare = getexecutorname;
 
-        for ExploitName, ExploitFunction in next, Table do
-            if (ExploitFunction) then
-                return ExploitName;
-            end;
-        end;
+		for ExploitName, ExploitFunction in next, Table do
+			if (ExploitFunction) then
+				return ExploitName;
+			end;
+		end;
 
-        return "Undefined";
-    end;
+		return "Undefined";
+	end;
 
-    local ProtectFunctions = {};
-    ProtectFunctions.Synapse = function(GuiObject) syn.protect_gui(GuiObject); GuiObject.Parent = CoreGuiService; end;
-    ProtectFunctions.ProtoSmasher = function(GuiObject) GuiObject.Parent = get_hidden_gui(); end;
-    ProtectFunctions.Sentinel = function(GuiObject) GuiObject.Parent = CoreGuiService; end;
-    ProtectFunctions.ScriptWare = function(GuiObject) GuiObject.Parent = gethui(); end;
-    ProtectFunctions.Undefined = function(GuiObject) GuiObject.Parent = CoreGuiService; end;
+	local ProtectFunctions = {};
+	ProtectFunctions.Synapse = function(GuiObject) syn.protect_gui(GuiObject); GuiObject.Parent = CoreGuiService; end;
+	ProtectFunctions.ProtoSmasher = function(GuiObject) GuiObject.Parent = get_hidden_gui(); end;
+	ProtectFunctions.Sentinel = function(GuiObject) GuiObject.Parent = CoreGuiService; end;
+	ProtectFunctions.ScriptWare = function(GuiObject) GuiObject.Parent = gethui(); end;
+	ProtectFunctions.Undefined = function(GuiObject) GuiObject.Parent = CoreGuiService; end;
 
 	local NewInstance = Objects.new("ScreenGui")
 	NewInstance.Name = Title
-    ProtectFunctions[GetExploit()](NewInstance);
+	ProtectFunctions[GetExploit()](NewInstance);
 
-    getgenv().OldInstance = NewInstance;
+	getgenv().OldInstance = NewInstance;
 
 	MainGUI = NewInstance
 
@@ -1141,7 +1173,7 @@ function Material.Load(Config)
 
 		function OptionLibrary.Dropdown(DropdownConfig)
 			local DropdownText = DropdownConfig.Text or "nil dropdown"
-            local DropdownValue = DropdownConfig.Default
+			local DropdownValue = DropdownConfig.Default
 			local DropdownCallback = DropdownConfig.Callback or function() print("nil dropdown") end
 			local DropdownOptions = DropdownConfig.Options or {}
 			local Menu = DropdownConfig.Menu or {}
@@ -1223,7 +1255,7 @@ function Material.Load(Config)
 				NewButton.MouseButton1Down:Connect(function()
 					DropdownCallback(Value)
 					DropdownTitle.Text = DropdownText..": "..Value
-                    DropdownValue = Value
+					DropdownValue = Value
 				end)
 			end)
 
@@ -1251,9 +1283,9 @@ function Material.Load(Config)
 				return DropdownTitle.Text
 			end
 
-            function DropdownLibrary:GetValue()
-                return DropdownValue
-            end
+			function DropdownLibrary:GetValue()
+				return DropdownValue
+			end
 
 			function DropdownLibrary:SetOptions(NewMenu)
 				DropdownOptions = NewMenu or {}
@@ -1288,7 +1320,7 @@ function Material.Load(Config)
 					NewButton.MouseButton1Down:Connect(function()
 						DropdownCallback(Value)
 						DropdownTitle.Text = DropdownText..": "..Value
-                        DropdownValue = Value
+						DropdownValue = Value
 					end)
 				end)
 			end
@@ -2409,9 +2441,9 @@ function Material.Load(Config)
 				return SliderTitle.Text
 			end
 
-            function SliderLibrary:GetValue()
-                return tonumber(SliderValue.Text)
-            end
+			function SliderLibrary:GetValue()
+				return tonumber(SliderValue.Text)
+			end
 
 			function SliderLibrary:SetMin(Value)
 				SliderMin = Value
