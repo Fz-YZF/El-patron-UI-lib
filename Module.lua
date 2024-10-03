@@ -41,7 +41,7 @@ local Themes = {
 		TextField = Color3.fromRGB(124,37,255),
 		TextFieldAccent = Color3.fromRGB(124,37,255),
 	},
-	Dark = {
+	Patron = {
 		MainFrame = Color3.fromRGB(255, 0, 4),
 		Minimise = Color3.fromRGB(0, 0, 0),
 		MinimiseAccent = Color3.fromRGB(147,59,0),
