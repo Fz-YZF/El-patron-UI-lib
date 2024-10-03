@@ -70,8 +70,8 @@ local Themes = {
 		DropdownAccent = Color3.fromRGB(235,235,235),
 		ColorPicker = Color3.fromRGB(85,85,85),
 		ColorPickerAccent = Color3.fromRGB(235,235,235),
-		TextField = Color3.fromRGB(175,175,175),
-		TextFieldAccent = Color3.fromRGB(255,255,255),
+		TextField = Color3.fromRGB(21, 21, 21),
+		TextFieldAccent = Color3.fromRGB(90, 0, 0),
 	},
 	Mocha = {
 		MainFrame = Color3.fromRGB(255,255,255),
