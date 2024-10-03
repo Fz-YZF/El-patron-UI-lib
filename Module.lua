@@ -42,7 +42,7 @@ local Themes = {
 		TextFieldAccent = Color3.fromRGB(124,37,255),
 	},
 	Dark = {
-		MainFrame = Color3.fromRGB(0, 0, 0),
+		MainFrame = Color3.fromRGB(90, 0, 0),
 		Minimise = Color3.fromRGB(90, 0, 0),
 		MinimiseAccent = Color3.fromRGB(255, 255, 255),
 		Maximise = Color3.fromRGB(0, 0, 0),
