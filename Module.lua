@@ -169,7 +169,7 @@ local Themes = {
 		TextField = Color3.fromRGB(175,175,175),
 		TextFieldAccent = Color3.fromRGB(255,255,255),
 	},
-	ElPatron = {
+	Patron = {
 		MainFrame = Color3.fromRGB(0, 0, 0),
 		Minimise = Color3.fromRGB(219, 210, 202),
 		MinimiseAccent = Color3.fromRGB(219, 210, 202),
